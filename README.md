@@ -30,4 +30,4 @@ hey
 
 Roadmap:
 
-Day 1 - [x] Planning 
+-[x] Day 1 Planning 
