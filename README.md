@@ -31,3 +31,8 @@ hey
 Roadmap:
 
 -[x] Day 1 Planning 
+
+## To Do:
+1. Trello Board (Add Shahrukh)
+2. Plan
+3. Divide and Conquer
