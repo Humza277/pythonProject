@@ -1,4 +1,4 @@
-# pythonProject
+# Python Group Project
 
 # Airplane project
 
@@ -18,7 +18,7 @@ As an airport assistant i want to be able to generate a flight_attendees_list_re
 
 ## Dream Team :rocket:
 
- - Anais Tang
- - Humza Malak
- - Ugne Okmanaite
- - Man-Wai Tse
+ - Anais Tang (insert roles)
+ - Humza Malak (insert roles)
+ - Ugne Okmanaite (insert roles)
+ - Man-Wai Tse (insert roles)
