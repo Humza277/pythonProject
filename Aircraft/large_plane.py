@@ -1,8 +1,8 @@
 # importing planes file
 from Aircraft.planes import Planes
 
-# creating a subclass for small aircraft
-class SmallPlane(Planes):
+# creating a subclass for large aircraft
+class LargePlane(Planes):
     # initialising the class using instance attributes
     def __init__(self, name, number_of_seats, fuel_capacity, flight_type):
         super().__init__(name, number_of_seats, fuel_capacity)
@@ -10,7 +10,6 @@ class SmallPlane(Planes):
         self.flight_type = flight_type
 
 # creating an object
-sp_1 = SmallPlane("E195", 120, "16,213 Litres", "Short haul")
+lp_1 = LargePlane("A380", 538, "320,000 Litres", "Long haul")
 
-print(sp_1.flight_type)
-
+print(lp_1.flight_type)
