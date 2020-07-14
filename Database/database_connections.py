@@ -1,6 +1,6 @@
 import pyodbc
 # Creating a class with singular method
-class Database:
+class Database  :
     # method connects to db
     server = 'databases2.spartaglobal.academy'  #
     database = 'dangus'
