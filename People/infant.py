@@ -1,5 +1,5 @@
 import passenger
 
-class Infant(passenger):
-    def __init__(self, passportNumber):
-        super().__init__(passportNumber)
+class Infant(Passenger):
+    def __init__(self, fname, lname, passportNumber, DoB):
+        super().__init__()
