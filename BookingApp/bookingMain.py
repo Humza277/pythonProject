@@ -22,4 +22,4 @@ class Bookingapp(Passenger):
 
 user = Bookingapp
 user.createUser()
-user.calculateAge()
+
