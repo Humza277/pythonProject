@@ -1,3 +1,4 @@
+import datetime
 from People import passenger
 from People.passenger import Passenger
 
@@ -12,8 +13,17 @@ class Bookingapp(Passenger):
             input('First Name: '),
             input('Last Name: '),
             int(input('PassportNumber: ')),
-            float(input('Date of Birth: '))
+            float(input('Date of Birth in DD/MM/YYY format: '))
         )
+
+    def calculateAge(self):
+        try:
+            today = datetime.date.today()
+        except ValueError:
+            print("Incorrect Format")
+        else:
+            age = today - self.DoB
+            return age
 
 
 user = Bookingapp
