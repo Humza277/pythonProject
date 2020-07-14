@@ -39,6 +39,6 @@
 
 
 ## To Do: :black_nib:
-- [x][Trello Board](https://trello.com/b/CeFMDAcq/airport-project-group-1) 
+- [x] [Trello Board](https://trello.com/b/CeFMDAcq/airport-project-group-1) 
 - [] Plan
 - [] Divide and Conquer
