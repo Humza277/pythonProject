@@ -5,7 +5,8 @@ from People.passenger import Passenger
 
 class Bookingapp(Passenger):
     def __init__(self, fname, lname, passportNumber, DoB):
-        super().__init__(fname, lname, passportNumber, DoB)
+        super().__init__(fname, lname, passportNumber, DoB, booking_id):
+        self.booking_id = booking_id
 
     @classmethod
     def createUser(cls):
@@ -21,9 +22,10 @@ class Bookingapp(Passenger):
         passengerB = {}
         for i in range(1):
             person = Bookingapp.createUser()
-            passengerB[person.lname] = person
+            passengerB[person.lname] = person.fname, person.lname, person.passportNumber, person.DoB
             print(passengerB.items())
 
 
 user = Bookingapp
-user.createUser()
+# user.createUser()
+user.userStore()
