@@ -13,7 +13,7 @@ class Bookingapp(Passenger):
             input('First Name: '),
             input('Last Name: '),
             int(input('PassportNumber: ')),
-            float(input('Date of Birth in DD/MM/YYY format: '))
+            float(input('Date of Birth in DD/MM/YYYY format: '))
         )
 
     def calculateAge(self):
