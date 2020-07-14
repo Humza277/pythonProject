@@ -16,8 +16,13 @@ class Bookingapp(Passenger):
             input('Date of Birth in DD/MM/YYYY format: ')
         )
 
-
-
+    @staticmethod
+    def userStore():
+        passengerB = {}
+        for i in range(1):
+            user = Bookingapp.createUser()
+            passengerB[user.fname] = user
+            print(passengerB.items())
 
 
 user = Bookingapp
