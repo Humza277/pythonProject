@@ -1,11 +1,10 @@
 import pyodbc
 # Creating a class with singular method
 class Database:
-    def __init__(self, server, database, username, password):
-        self.server = server
-        self.database = database
-        self.username = username
-        self.password = password
+    server = 'databases2.spartaglobal.academy'  #
+    database = 'Northwind'
+    username = 'SA'
+    password = 'Passw0rd2018'
 
     # when this method, cursor is returned
     def establishing_connection(self):

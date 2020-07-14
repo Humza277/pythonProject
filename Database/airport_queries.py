@@ -1,9 +1,9 @@
 from database_connections import *
-from BookingApp import bookingMain
+from BookingApp.bookingMain import *
 
 
 # database_OOP parent class
-class Airport_queries(bookingMain):
+class Airport_queries:
     def __init__(self):
         pass
 
