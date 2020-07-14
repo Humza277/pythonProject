@@ -3,7 +3,8 @@
 2. Import destinations to determine price
 """
 from BookingApp.bookingMain import *
-from Destinations.Destinations import *
+from Destinations.JSON_CSV_converter import *
+import pandas
 
 class FlightPrices:
     def __init__(self):
