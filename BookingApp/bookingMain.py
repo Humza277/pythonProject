@@ -21,14 +21,10 @@ class Bookingapp(Passenger):
             booking_ID=Bookingapp.booking_ID
         )
 
-    # def createID(self, booking_ID):
-    #     self.booking_ID = booking_ID
-    #     if createUser = True
-
     @staticmethod
     def userStore():
         passengerB = {}
-        csv_columns =["First name", "Last Name", "Passport Number", "Date of Birth", "ID"]
+        # change to while loop for next iteration
         for i in range(2):
             person = Bookingapp.createUser()
             Bookingapp.booking_ID += 1
@@ -42,11 +38,18 @@ class Bookingapp(Passenger):
             for key in passengerB.keys():
                 passdata.write("%s,%s\n"%(key, passengerB[key]))
 
-        # with open("passengerlist.csv", "w+") as passdata:
-        #     writer = csv.DictWriter(passdata, fieldnames=csv_columns)
-        #     writer.writeheader()
-        #     for data in passengerB:
-        #         writer.writerow(data)
+
+
+# def createID(self, booking_ID):
+#     self.booking_ID = booking_ID
+#     if createUser = True
+
+# csv_columns =["First name", "Last Name", "Passport Number", "Date of Birth", "ID"]
+# with open("passengerlist.csv", "w+") as passdata:
+#     writer = csv.DictWriter(passdata, fieldnames=csv_columns)
+#     writer.writeheader()
+#     for data in passengerB:
+#         writer.writerow(data)
 
 
 # file.write()
