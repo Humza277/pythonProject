@@ -1,18 +1,6 @@
 import datetime
-from People import passenger
+import csv
 from People.passenger import Passenger
-
-
-# class Resource(object):
-#     class_counter = 0
-#
-#     def __init__(self, name, position, type, active):
-#         self.name = name
-#         self.position = position
-#         self.type = type
-#         self.active = active
-#         self.id = Resource.class_counter
-#         Resource.class_counter += 1
 
 
 class Bookingapp(Passenger):
@@ -22,7 +10,6 @@ class Bookingapp(Passenger):
         super().__init__(fname, lname, passportNumber, DoB)
         self.booking_ID = booking_ID
         self.booking_ID = Bookingapp.booking_ID
-        Bookingapp.booking_ID += 1
 
     @classmethod
     def createUser(cls):
@@ -41,14 +28,30 @@ class Bookingapp(Passenger):
     @staticmethod
     def userStore():
         passengerB = {}
+        csv_columns =["First name", "Last Name", "Passport Number", "Date of Birth", "ID"]
         for i in range(2):
             person = Bookingapp.createUser()
+            Bookingapp.booking_ID += 1
             # need to change passport number to ID
-            passengerB[person.passportNumber] = person.fname, person.lname, person.passportNumber, \
+            passengerB[Bookingapp.booking_ID] = person.fname, person.lname, person.passportNumber, \
                                                 person.DoB, Bookingapp.booking_ID
             for k, v in passengerB.items():
                 print(f"Passenger details - ID:{k} : {v}")
 
+        with open("passengerlist.csv", "w+") as passdata:
+            for key in passengerB.keys():
+                passdata.write("%s,%s\n"%(key, passengerB[key]))
+
+        # with open("passengerlist.csv", "w+") as passdata:
+        #     writer = csv.DictWriter(passdata, fieldnames=csv_columns)
+        #     writer.writeheader()
+        #     for data in passengerB:
+        #         writer.writerow(data)
+
+
+# file.write()
+# print("Passenger file has been created")
+# CSV = "\n".join(str([k + ',' + ','.join(v) for k, v in passengerB.items()]))
 
 user = Bookingapp
 # user.createUser()
