@@ -11,17 +11,10 @@ class Bookingapp(Passenger):
     @classmethod
     def createUser(cls):
         return cls(
-<<<<<<< HEAD
-            fname = input('First Name: '),
-            lname = input('Last Name: '),
-            passportNumber = (input('PassportNumber: ')),
-            Dob = input('Date of Birth in DD/MM/YYYY format: ')
-=======
             fname=input('First Name: '),
             lname=input('Last Name: '),
             passportNumber=int(input('PassportNumber: ')),
             DoB=input('Date of Birth in DD/MM/YYYY format: ')
->>>>>>> f86f5b4cbd6423bb6527843b13a5f8ca2f768a85
         )
 
     @staticmethod
