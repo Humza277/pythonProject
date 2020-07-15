@@ -9,18 +9,17 @@ class FlightDetails:
     # function to display all flight options
     @staticmethod
     def menu():
-        fd1 = FlightDetails()
-        print("""
+        return("""
         ===============================================
         | Welcome to the Dangus Flight Booking System! |
         ===============================================
         
         Please choose one of the following options:
         1. To choose a destination
-        2. To find the cheapest flight (display all short haul flights, retrieve data from database)
-        3. To find the longest flight (display all long haul flights, retrieve data from database)
+        2. To find the cheapest flight OR (display all short haul flights, retrieve data from database)
+        3. To find the longest flight OR (display all long haul flights, retrieve data from database)
         4. To see your booking (insert booking ID, validate it against database to retrieve booking) 
-        5. 
+        5. To add a passenger to a current booking
         6. To book a flight (passenger details, import create user from booking main, )
         7. To exit
         """)
@@ -68,14 +67,26 @@ class FlightDetails:
                 print("Something")
             elif passenger_choice.capitalize() == "Berlin": # country 3
                 print("Something")
-            elif passenger_choice.capitalize() == "Tel Aviv": # country 5
+            elif passenger_choice.capitalize() == "TelAviv": # country 5
                 print("Something")
+            elif passenger_choice.capitalize() == "Amsterdam":
+                print("You are going to Amsterdam! \n")
+                from BookingApp.bookingMain import Bookingapp
+                print(Bookingapp.userStore())
+                print(
+                    "Thank you for booking with Dangus Airline!\nTo see the menu options again type in [M]\nTo see exit your booking type in [E]")
+            elif passenger_choice.capitalize() == "Sydney":
+                print("You are going to Sydney! \n")
+                from BookingApp.bookingMain import Bookingapp
+                print(Bookingapp.userStore())
+                print(
+                    "Thank you for booking with Dangus Airline!\nTo see the menu options again type in [M]\nTo see exit your booking type in [E]")
             elif passenger_choice.capitalize() == "Vilnius":
                 print("You are going to Vilnius! Please enter your passenger details to confirm booking: \n")
                 from BookingApp.bookingMain import Bookingapp
-                # print(Bookingapp.createUser())
                 print(Bookingapp.userStore())
                 print("Thank you for booking with Dangus Airline!\nTo see the menu options again type in [M]\nTo see exit your booking type in [E]")
+                close_program = False
             elif passenger_choice.upper() == "M": # to return to menu
                 print(fd1.menu())
             elif passenger_choice.upper() == "E":

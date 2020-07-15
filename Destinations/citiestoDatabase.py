@@ -34,14 +34,14 @@ def insert_df_to_table():
     df = pd.DataFrame(data, columns=['country', 'geonameid', 'name', 'subcountry'])
     for row in df.itertuples():
         cursor = d.establish_cursor()
-        cursor.execute('''
-                        INSERT INTO TestDB.dbo.cities_list (Country, Geoname, Name, City)
+        cursor.execute("""
+                        INSERT INTO TestDB.dbo.cities_list (Country, Geonameid, Name, City)
                         VALUES (?,?,?)
-                        ''',
-                        row.Country,
-                        row.Geoname,
-                        row.Name,
-                        row.City
+                        """,
+                        row.country,
+                        row.geonameid,
+                        row.name,
+                        row.subcountry
                         )
         d.establish_cursor().commit()
         print("Data Frame to SQL successfully exported")
