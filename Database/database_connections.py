@@ -2,7 +2,7 @@ import pyodbc
 # Creating a class with singular method
 class Database:
     server = 'databases2.spartaglobal.academy'  #
-    database = 'Northwind'
+    database = 'dangus_db'
     username = 'SA'
     password = 'Passw0rd2018'
 
@@ -19,6 +19,7 @@ class Database:
 
     def create_cursor(self):
         cursor = self.connections.cursor()  # variable set to cursor
-        return cursor  # return the value of allocated position of the cursor
         print("cursor has been established")
+        return cursor  # return the value of allocated position of the cursor
+
 
