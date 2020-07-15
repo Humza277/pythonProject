@@ -1,5 +1,0 @@
-USE dangus_db
-
-
-
-

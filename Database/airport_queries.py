@@ -29,6 +29,9 @@ class Airport_queries:
         data = pd.read_csv('passengerdatabaselist.csv')
         pdl = pd.DataFrame(data, columns=['First_Name', 'Last_Name', 'Passport_Number', 'Date_of_Birth', 'Passenger_ID'])
 
+    def convert_csv_dataframe(self):
+        df = pd.read_csv('passenger_details.csv')
+        print(df)
         # d = Database()
         # cursor = d.create_cursor()
         # for row in pdl.intertuples():
@@ -54,6 +57,7 @@ class Airport_queries:
         #
         # pass
 
-
+#
 u = Airport_queries()
-u.send_to_database()
+# u.send_to_database()
+u.convert_csv_dataframe()
