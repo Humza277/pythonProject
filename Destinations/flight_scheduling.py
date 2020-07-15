@@ -27,6 +27,21 @@ class FlightDetails:
 
     def choose_destination():
         pass
+    # retrieve data from the database, list of destination
+    # if chosen destination not in database, raise Error, display flight destination options
+
+    def passenger_budget():
+        pass
+    # require passenger input (int) for budget
+    # if budget < min(pricelist)
+    # raise error no flights available
+    # if budget > min(pricelist)
+    # retrieve list of available destinations
+    # if passenger choose destination
+    # call usercreate method
+    # if passenger does not want to book, display menu
+    # else: exit program
+
 
 
     def user_interface():
