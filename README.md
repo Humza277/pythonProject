@@ -18,10 +18,10 @@
 
 ## Dream Team :rocket:
 
- - Anais Tang (insert roles)
- - Humza Malak (insert roles)
- - Ugne Okmanaite (insert roles)
- - Man-Wai Tse (insert roles)
+ - Anais Tang 
+ - Humza Malak 
+ - Ugne Okmanaite 
+ - Man-Wai Tse 
 
 
 ```
@@ -56,3 +56,12 @@
 
 ## To Do: :black_nib:
 - [x] [Trello Board](https://trello.com/b/CeFMDAcq/airport-project-group-1) 
+
+### Overview
+* [Main](Main/README.md)
+* [Aircraft](Aircraft/README.md)
+* [BookingApp](BookingApp/README.md)
+* [Database](Database/README.md)
+* [Destinations](Destinations/README.md)
+* [Flights Prices](FlightPrices/README.md) 
+* [People](People/README.md) 

@@ -1,19 +1,21 @@
-import numpy as np
-import pandas as pd
-from database_connections import *
+# Numpy and pandas are similar modules
+import numpy as np # Numpy works really well when data is Numeric
+import pandas as pd # Module used to presents tabular data in a clean format  
+from database_connections import * # imports other files 
 from BookingApp.bookingMain import *
 
 
-# database_OOP parent class
+# database parent class
 class Airport_queries:
     def __init__(self):
         pass
-
+    
+    # P
     def passenger_info(self):
-        object = Bookingapp.userStore()  # object of Database_OOP class
+        object = Bookingapp.userStore()  # instance of database_connections class
+        
         # cursor runs all queries
-        cursor = object.establishing_connection()  # cursor required to run queries in databse
-        # code
+        cursor = object.establishing_connection()  # cursor required to run queries in database
         query_result = f"insert into user_name(First_Name,Last_Name,Passport_Number,Date_of_Birth) values " \
                        f"({fname}, {lname},{passportNumber},{Dob})"
         rows = cursor.execute(query_result)
