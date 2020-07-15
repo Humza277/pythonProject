@@ -5,12 +5,11 @@ from People.passenger import Passenger
 
 
 class Bookingapp(Passenger):
-    booking_ID = 12345
 
-    def __init__(self, fname, lname, passportNumber, DoB, booking_ID):
+
+    def __init__(self, fname, lname, passportNumber, DoB):
         super().__init__(fname, lname, passportNumber, DoB)
-        self.booking_ID = booking_ID
-        self.booking_ID = Bookingapp.booking_ID
+
 
     @classmethod
     def createUser(cls):
@@ -19,7 +18,7 @@ class Bookingapp(Passenger):
             lname=input('Last Name: '),
             passportNumber=int(input('PassportNumber: ')),
             DoB=input('Date of Birth in DD/MM/YYYY format: '),
-            booking_ID=Bookingapp.booking_ID
+
         )
 
     # Humza create a method that asks the passenger how many are travelling
@@ -31,10 +30,9 @@ class Bookingapp(Passenger):
         number_travelling = int(input("How many are travelling to the destination? \n"))
         for i in range(number_travelling):
             person = Bookingapp.createUser()
-            Bookingapp.booking_ID += 1
+
             # need to change passport number to ID
-            passengerB[Bookingapp.booking_ID] = person.fname, person.lname, person.passportNumber, \
-                                                person.DoB, Bookingapp.booking_ID
+            passengerB[person.passportNumber] = person.fname, person.lname, person.passportNumber, person.DoB
             for k, v in passengerB.items():
                 print(f"Passenger details - ID:{k} : {v}")
 
