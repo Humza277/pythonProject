@@ -5,8 +5,8 @@ class Assistant:
     def login(self):
         count = 0
         while True:
-            userName = input("Please input user name")
-            password = input("Please input password")
+            userName = input("Please input user name: \n")
+            password = input("Please input password: \n")
             count += 1
             if count == 3:
                 print("Too many tries... Exiting program")
@@ -20,4 +20,5 @@ class Assistant:
 
 
 
-    def make_booking
+    def make_booking():
+        pass
