@@ -25,6 +25,7 @@ class Airport_queries:
         first_column = df.columns[0]
         df = df.drop([first_column], axis=1)
         df.to_csv('passengerdatabaselist.csv', index=False)
+
         data = pd.read_csv('passengerdatabaselist.csv')
         pdl = pd.DataFrame(data, columns=['First_Name', 'Last_Name', 'Passport_Number', 'Date_of_Birth', 'Passenger_ID'])
 
