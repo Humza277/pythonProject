@@ -15,6 +15,10 @@ class Database:
                 print("Connection did not time out")
         except:
             print("Connection Time out")
-        else:
-            cursor = connection.cursor() # variable set to cursor
-            return cursor # return the value of allocated position of the cursor
+
+
+    def create_cursor(self):
+        cursor = self.connections.cursor()  # variable set to cursor
+        return cursor  # return the value of allocated position of the cursor
+        print("cursor has been established")
+
