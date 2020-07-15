@@ -1,5 +1,6 @@
 from Destinations.flight_scheduling import FlightDetails
 from Destinations.long_shorthaul import FlightType
+from People.airportAssistant import Assistant
 
 class User_interaction:
 
@@ -26,7 +27,9 @@ class User_interaction:
             elif user_input == 4:
                 print("Work in progress... finding booking")
             elif user_input == 5:
-                print("work in progress...")
+                print("Welcome to the login system")
+                a = Assistant()
+                a.login()
             elif user_input == 6:
                 print("To book flight")
                 fd1.choose_destination()  # call create user method from booking main
@@ -44,6 +47,6 @@ class User_interaction:
 
 
 # Test
-# ui = User_interaction()
-# ui.user_interface()
+ui = User_interaction()
+ui.user_interface()
 
