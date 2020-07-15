@@ -5,12 +5,13 @@ class FlightType:
 
     @staticmethod
     def short_haul_flights():
-        sql_command = "SELECT cities FROM destination(table) WHERE flight_type == shorthaul"
-        cursor = connection.cursor()
-        rows = cursor.execute(sql_command)
-        Cities = []
-        for row in rows:
-            Cities.append(row)
+
+        # sql_command = "SELECT cities FROM destination(table) WHERE flight_type == shorthaul"
+        # cursor = connection.cursor()
+        # rows = cursor.execute(sql_command)
+        # Cities = []
+        # for row in rows:
+        #     Cities.append(row)
 
         # instantiate flight details class, call display
         dd = FlightDetails()
@@ -18,12 +19,12 @@ class FlightType:
 
     @staticmethod
     def long_haul_flights():
-        sql_command = "SELECT cities FROM destination(table) WHERE flight_type == longhaul"
-        cursor = connection.cursor()
-        rows = cursor.execute(sql_command)
-        Cities = []
-        for row in rows:
-            Cities.append(row)
+        # sql_command = "SELECT cities FROM destination(table) WHERE flight_type == longhaul"
+        # cursor = connection.cursor()
+        # rows = cursor.execute(sql_command)
+        # Cities = []
+        # for row in rows:
+        #     Cities.append(row)
 
         # instantiate flight details class, call display
         dd = FlightDetails()

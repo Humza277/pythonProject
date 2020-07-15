@@ -27,7 +27,11 @@ class User_interaction:
             elif user_input == 4:
                 print("Work in progress... finding booking")
             elif user_input == 5:
-                print("Welcome to the login system")
+                print("""
+                    ===============================
+                    | Welcome to the login system!|
+                    ===============================
+        """)
                 a = Assistant()
                 a.login()
             elif user_input == 6:
@@ -46,7 +50,7 @@ class User_interaction:
 
 
 
-# Test
+# # Test
 ui = User_interaction()
 ui.user_interface()
 
