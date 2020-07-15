@@ -73,7 +73,7 @@ class FlightDetails:
             elif passenger_choice.capitalize() == "Vilnius":
                 print("You are going to Vilnius! Please enter your passenger details to confirm booking: \n")
                 from BookingApp.bookingMain import Bookingapp
-                print(Bookingapp.createUser())
+                # print(Bookingapp.createUser())
                 print(Bookingapp.userStore())
                 print("Thank you for booking with Dangus Airline!\nTo see the menu options again type in [M]\nTo see exit your booking type in [E]")
             elif passenger_choice.upper() == "M": # to return to menu

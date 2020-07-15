@@ -22,11 +22,14 @@ class Bookingapp(Passenger):
             booking_ID=Bookingapp.booking_ID
         )
 
+    # Humza create a method that asks the passenger how many are travelling
+
     @staticmethod
     def userStore():
         passengerB = {}
         # change to while loop for next iteration
-        for i in range(2):
+        number_travelling = int(input("How many are travelling to the destination? \n"))
+        for i in range(number_travelling):
             person = Bookingapp.createUser()
             Bookingapp.booking_ID += 1
             # need to change passport number to ID
