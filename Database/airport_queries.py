@@ -23,26 +23,25 @@ class Airport_queries:
     def send_to_database(self):
         df = pd.read_csv('passengerlist.csv')
         first_column = df.columns[0]
-
         df = df.drop([first_column], axis=1)
-
         df.to_csv('passengerdatabaselist.csv', index=False)
-        pdl = pd.
+        data = pd.read_csv('passengerdatabaselist.csv')
+        pdl = pd.DataFrame(data, columns=['First_Name', 'Last_Name', 'Passport_Number', 'Date_of_Birth', 'Passenger_ID'])
 
-        d = Database()
-        cursor = d.create_cursor()
-        for row in df.intertuples():
-            cursor.execute('''
-            INSERT INTO dangus_db.dbo.Passenger (Passenger_ID, First_Name, Last_Name, Date_of_Birth, Passport_Number)
-            VALUES (?,?,?,?,?)
-            ''',
-                           row.Passenger_ID,
-                           row.First_Name,
-                           row.Last_Name,
-                           row.Date_of_Birth,
-                           row.Passport_Number,
-                           )
-        d.connections.commit()
+        # d = Database()
+        # cursor = d.create_cursor()
+        # for row in pdl.intertuples():
+        #     cursor.execute('''
+        #     INSERT INTO dangus_db.dbo.Passenger (Passenger_ID, First_Name, Last_Name, Date_of_Birth, Passport_Number)
+        #     VALUES (?,?,?,?,?)
+        #     ''',
+        #                    row.Passenger_ID,
+        #                    row.First_Name,
+        #                    row.Last_Name,
+        #                    row.Date_of_Birth,
+        #                    row.Passport_Number,
+        #                    )
+        # d.connections.commit()
 
         # filename = "passengerlist.csv"
         # opening the file with w+ mode truncates the file
