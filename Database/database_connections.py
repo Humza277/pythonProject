@@ -2,7 +2,7 @@ import pyodbc
 # Creating a class with singular method
 class Database:
     server = 'databases2.spartaglobal.academy'  #
-    database = ''
+    database = 'dangus_db'
     username = 'SA'
     password = 'Passw0rd2018'
 

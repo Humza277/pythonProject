@@ -23,27 +23,37 @@ class Airport_queries:
     def send_to_database(self):
         df = pd.read_csv('passengerlist.csv')
         first_column = df.columns[0]
+
         df = df.drop([first_column], axis=1)
-        df.to_csv('passengerlist.csv', index=False)
+
+        df.to_csv('passengerdatabaselist.csv', index=False)
+        pdl = pd.
 
         d = Database()
         cursor = d.create_cursor()
+        for row in df.intertuples():
+            cursor.execute('''
+            INSERT INTO dangus_db.dbo.Passenger (Passenger_ID, First_Name, Last_Name, Date_of_Birth, Passport_Number)
+            VALUES (?,?,?,?,?)
+            ''',
+                           row.Passenger_ID,
+                           row.First_Name,
+                           row.Last_Name,
+                           row.Date_of_Birth,
+                           row.Passport_Number,
+                           )
+        d.connections.commit()
 
-        cursor.execute()
-
-
-
-
-
-        #filename = "passengerlist.csv"
+        # filename = "passengerlist.csv"
         # opening the file with w+ mode truncates the file
-        #f = open(filename, "a+") # opening the file with w+ mode truncates the file
-        #f.close()
+        # f = open(filename, "a+") # opening the file with w+ mode truncates the file
+        # f.close()
         # data = pd.read_csv('passengerlist.csv')
         # df = pd.DataFrame(data, columns=['Passenger_ID', 'First_Name',
         #                                  'Last_Name', ' Date_Of_Birth', 'Passport_Number'])
         #
         # pass
+
 
 u = Airport_queries()
 u.send_to_database()
