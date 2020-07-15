@@ -19,18 +19,18 @@ class Databases:
                     | Connection Established! Welcome to the Dangus Database |
                     ==========================================================
             """)
-            self.cursor = self.connections.cursor()
+            # self.cursor = self.connections.cursor()
         except Exception:
             print("Did not connect")
 
-# Instantiated class
-d = Databases()
+    def establish_cursor(self):
+        cursor = self.connections.cursor()
+        return cursor
+    print("Cursor established")
 
-    # def csv_to_dataframe():
-    #     data = pd.read_csv('cities_list.csv')
-    #     df = pd.DataFrame(data, columns=['country','geonameid','name','subcountry'])
-    #     return df
-    #     # print(df)
+# d = Databases()
+# d.establish_cursor()
 
-# Importing csv
+
+
 
