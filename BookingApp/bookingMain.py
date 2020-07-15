@@ -1,5 +1,4 @@
 # Class to handle the bookings of the passengers
-
 import datetime
 import csv
 from People.passenger import Passenger
@@ -36,7 +35,7 @@ class Bookingapp(Passenger):
             for k, v in passengerB.items():
                 print(f"Passenger details - ID:{k} : {v}")
 
-        with open("passengerlist.csv", "w+") as passdata:
+        with open("passengerlist.csv", "a+") as passdata:
             for key in passengerB.keys():
                 passdata.write("%s,%s\n"%(key, passengerB[key]))
 
