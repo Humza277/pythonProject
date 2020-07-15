@@ -1,9 +1,22 @@
-# Python Group Project
+# Python Group Project :star:
 
 # Airplane project :airplane:
 
 ## Criteria
 
+**Theme**   
+Upgrade functionalities  
+---
+**Epic Story** 
+```
+An agile epic is a body of work that lasts longer than one iteration or can be broken down into user stories 
+based on the needs/requests of customers or end users. Epics are a helpful way to organize your work and to create a 
+hierarchy
+
+```
+Create an aiport assistant to enhance user experience that enables the functionality of airport systems, enable 
+efficient customer travel through user friendly interface. 
+---
 **User Stories**
 
 1. As an airport Assistant I want to be able to create a passenger with a name and passport number, so I can add them to the flight
@@ -15,6 +28,8 @@
 4. As an airport assistant I want to be able to add passengers to the flight_trip so that i can sell the tickets to them
 
 5. As an airport assistant I want to be able to generate a flight_attendees_list_report that list of passengers and passports, so that i can check their identity document
+----
+
 
 ## Dream Team :rocket:
 
@@ -65,3 +80,4 @@
 * [Destinations](Destinations/README.md)
 * [Flights Prices](FlightPrices/README.md) 
 * [People](People/README.md) 
+
