@@ -73,12 +73,15 @@ class Assistant:
                 cursor.execute("SELECT * FROM Passengers WHERE PassengersID = ?", [passenger_ID])
                 row = cursor.fetchone()
                 print(row)
-
+                make_booking_loop = False
             except Exception:
                 print("Invalid passenger ID\nInput a correct Passenger ID: \n")
                 # continue
             else:
                 print("What would you like to do?")
+                print("Type [B] To book a flight")
+
+                # make_booking_loop = False
 
 # Test
 # a = Assistant()
