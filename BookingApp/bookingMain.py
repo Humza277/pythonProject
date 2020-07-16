@@ -1,5 +1,4 @@
 # Class to handle the bookings of the passengers
-import datetime
 import csv
 from People.passenger import Passenger
 

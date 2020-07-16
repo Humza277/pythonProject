@@ -1,18 +1,19 @@
-country,city,country_code
-China,Shanghai,CN
-United States,New York,US
-United Kingdom,London,GB
-Norway, Oslo, NO
-Italy, Rome, IT
-China,Beijing,CN
-Denmark,Copenhagen,DK
-Russia,Moscow,RU
-Brazil,Rio de Janeiro,BR
-Philippines,Manila,PH
-Argentina,Buenos Aires,AR
-The Netherlands,Amsterdam,NE
-Belgium,Brussels,BE
-Finland,Vaasa,FI
-Sweden,Stockholm,SE
-Chile,Santiago,CL
-France,Paris,FR
+country,city,country_code, destination_id
+China,Shanghai,CN, 1
+United States,New York,US, 2
+United Kingdom,London,GB, 3
+Norway, Oslo, NO, 4
+Italy, Rome, IT, 5
+China,Beijing,CN, 6
+Denmark,Copenhagen,DK, 7
+Russia,Moscow,RU, 8
+Brazil,Rio de Janeiro,BR, 9
+Philippines,Manila,PH, 10
+Argentina,Buenos Aires,AR, 11
+The Netherlands,Amsterdam,NE, 12
+Belgium,Brussels,BE, 13
+Finland,Vaasa,FI, 14
+Sweden,Stockholm,SE, 15
+Chile,Santiago,CL, 16
+France,Paris,FR, 17
+Spain, Madrid, ES, 18
