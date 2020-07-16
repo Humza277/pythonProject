@@ -1,4 +1,4 @@
-Flight_Number, Destination, PassengersID, Duration, Seat_Location
+Flight_Number, Destination, PassengersID,  Duration, Seat_Location
 823,Sydney, 269, '18H', 19A
 660, Sao Paulo, 149, '12H', 15B
 680, Oslo, 227, '2H', 11A
