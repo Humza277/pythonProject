@@ -26,7 +26,7 @@ class Assistant:
                 break
             else:
                 
-                if userName == 'ass101' and password == 'richard':
+                if userName == 'assistant1' and password == 'wolo101':
                 # add break and method call to creating a booking
                     break
                 else:
