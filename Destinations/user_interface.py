@@ -24,10 +24,10 @@ class User_interaction:
                     # user_exit = True
                 elif user_input == 2:
                     dd = FlightType()
-                    print(dd.short_haul_flights())
+                    dd.short_haul_flights()
                 elif user_input == 3:
                     dd = FlightType()
-                    print(dd.long_haul_flights())
+                    dd.long_haul_flights()
                 elif user_input == 4:
                     print("""
                         ==============================================
@@ -61,7 +61,7 @@ class User_interaction:
 
 
 
-# # Test
+# Test
 # ui = User_interaction()
 # ui.user_interface()
 
