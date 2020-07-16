@@ -1,11 +1,15 @@
 from Destinations import databaseconnect
 from Destinations.databaseconnect import Databases
 import pandas as pd
+import hashlib
+import os
+import bcrypt
 
 # Creates class Assistant to enter for flight_attendant list
 
 class Assistant:
     # username and passwords are stored within data as attributes
+
     @staticmethod
     def staff_or_passenger():
         s_or_p = True
@@ -34,11 +38,15 @@ class Assistant:
     def login_passenger():
         # count is set to 0 
         count = 0
-        # only runs code when code is < 3 
+        # only runs code when code is < 3
+        awd = b"forlorn"
+        hashed = bcrypt.hashpw(awd, bcrypt.gensalt())
         while True:
 
             userName = input("Please input user name: \n")
             password = input("Please input password: \n")
+
+
 
             count += 1
             if count == 3:
@@ -48,7 +56,7 @@ class Assistant:
                 break
             else:
                 
-                if userName == 'ass101' and password == 'richard':
+                if userName == 'assistant' and bcrypt.checkpw(awd, hashed):
                 # add break and method call to creating a booking
                     break
                 else:
