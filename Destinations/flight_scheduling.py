@@ -31,8 +31,8 @@ class FlightDetails:
         fd1 = FlightDetails()
         print("Below are the following available destinations departing from London:\n")
         # sql_command = "SELECT cities from destinations table"
-
-        while user_input == "M" or user_input == "Y":
+        choosing = True
+        while not choosing:
 
             try:
                 user_input = input("To make a booking type [Y] to return to the menu type [M]\nYour selection: \n")
@@ -40,8 +40,10 @@ class FlightDetails:
                 print("Invalid selection. Please type in [Y] or [M]")
             if user_input.upper() == "Y":
                 return fd1.display_destination()
+                choosing = True
             elif user_input.upper() == "M":
                 print(fd1.menu())
+                choosing = True
             else:
                 print("Invalid selection. Please type in [Y] or [M]")
 
