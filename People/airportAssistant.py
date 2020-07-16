@@ -1,5 +1,6 @@
 from Destinations import databaseconnect
 from Destinations.databaseconnect import Databases
+import pandas as pd
 
 # Creates class Assistant to enter for flight_attendant list
 
@@ -69,15 +70,41 @@ class Assistant:
 
         while make_booking_loop:
             try:
-                passenger_ID = input("Input passenger ID:\n")
+                passenger_ID = input("Input passenger ID:\ntype Next after you have entered all the required passengers"
+                                     "\nThen select the passengers destination")
                 cursor.execute("SELECT * FROM Passengers WHERE PassengersID = ?", [passenger_ID])
                 row = cursor.fetchone()
                 print(row)
+                df = pd.DataFrame(row, columns=['PassengersID', 'FirstName', 'LastName',
+                                                'DOB', 'Booking_ID', 'Passport_Number'])
+                if passenger_ID == "Next":
+                    print("Select the destination")
+                    cursor.execute("SELECT City FROM Destination")
+                    drow = cursor.fetchall()
+                    print(drow)
+                    df['Destination'] = drow
+                    print(df)
+
             except Exception:
                 print("Invalid passenger ID,\nInput a correct Passenger ID: \n")
                 continue
             else:
                 print("")
+
+    @staticmethod
+    def selectdest():
+        pass
+
+
+
+
+
+
+
+
+
+
+
 # Test
 # a = Assistant()
 # a.staff_or_passenger()
