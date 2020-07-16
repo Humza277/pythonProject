@@ -32,9 +32,9 @@ class Bookingapp(Passenger):
             person = Bookingapp.createUser()
 
             # need to change passport number to ID
-            passengerB[person.passportNumber] = person.fname, person.lname, person.passportNumber, person.DoB
-            for k, v in passengerB.items():
-                print(f"Passenger details - ID:{k} : {v}")
+        passengerB[person.passportNumber] = person.fname, person.lname, person.passportNumber, person.DoB
+        for k, v in passengerB.items():
+            print(f"Passenger details - ID:{k} : {v}")
 
         with open("passengerlist.csv", "a+") as passdata:
             for key in passengerB.keys():
@@ -58,6 +58,6 @@ class Bookingapp(Passenger):
 # print("Passenger file has been created")
 # CSV = "\n".join(str([k + ',' + ','.join(v) for k, v in passengerB.items()]))
 
-user = Bookingapp
+# user = Bookingapp
 # user.createUser()
-user.userStore()
+# user.userStore()

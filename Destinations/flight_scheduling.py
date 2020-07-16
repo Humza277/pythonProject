@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 import itertools as it
-
+from BookingApp.bookingMain import Bookingapp
 
 # import database
 
@@ -31,7 +31,7 @@ class FlightDetails:
         fd1 = FlightDetails()
         print("Below are the following available destinations departing from London:\n")
         # sql_command = "SELECT cities from destinations table"
-        choosing = True
+        choosing = False
         while not choosing:
 
             try:
@@ -66,10 +66,9 @@ class FlightDetails:
         # from BookingApp.bookingMain import Bookingapp
         fd1 = FlightDetails()
         continue_program = True
-
         while continue_program:
             try:
-                passenger_choice = input("Please type in your chosen destination: \n")
+                passenger_choice = input("Please type in your choice: \n")
             except ValueError:
                 print(
                     "Sorry! We currently do not fly to your chosen destination. Please select a valid city. Below is a list of available cities")
@@ -79,51 +78,58 @@ class FlightDetails:
             if passenger_choice.capitalize() == "Paris":  # country 1
                 print("You are going to Paris!")
                 from BookingApp.bookingMain import Bookingapp
-                print(Bookingapp.userStore())
+                ba = Bookingapp
+                ba.userStore()
                 print(
-                    "Thank you for booking with Dangus Airline!\nTo see the menu options again type in [M]\nTo see exit your booking type in [E]")
+                    "\nThank you for booking with Dangus Airline!\nTo see the menu options again type in [M]\nTo see exit your booking type in [E]")
 
             elif passenger_choice.capitalize() == "Madrid":  # country 2
                 print("You are going to Madrid!")
                 from BookingApp.bookingMain import Bookingapp
-                print(Bookingapp.userStore())
+                ba = Bookingapp
+                ba.userStore()
                 print(
-                    "Thank you for booking with Dangus Airline!\nTo see the menu options again type in [M]\nTo see exit your booking type in [E]")
+                    "\nThank you for booking with Dangus Airline!\nTo see the menu options again type in [M]\nTo see exit your booking type in [E]")
 
             elif passenger_choice.capitalize() == "Berlin":  # country 3
                 print("You are going to Berlin!")
                 from BookingApp.bookingMain import Bookingapp
-                print(Bookingapp.userStore())
+                ba = Bookingapp
+                ba.userStore()
                 print(
-                    "Thank you for booking with Dangus Airline!\nTo see the menu options again type in [M]\nTo see exit your booking type in [E]")
+                    "\nThank you for booking with Dangus Airline!\nTo see the menu options again type in [M]\nTo see exit your booking type in [E]")
 
             elif passenger_choice.capitalize() == "TelAviv":  # country 4
                 print("You are going to Tel Aviv!")
                 from BookingApp.bookingMain import Bookingapp
-                print(Bookingapp.userStore())
+                ba = Bookingapp
+                ba.userStore()
                 print(
-                    "Thank you for booking with Dangus Airline!\nTo see the menu options again type in [M]\nTo see exit your booking type in [E]")
+                    "\nThank you for booking with Dangus Airline!\nTo see the menu options again type in [M]\nTo see exit your booking type in [E]")
 
             elif passenger_choice.capitalize() == "Amsterdam":  # country 5
                 print("You are going to Amsterdam! \n")
                 from BookingApp.bookingMain import Bookingapp
-                print(Bookingapp.userStore())
+                ba = Bookingapp
+                ba.userStore()
                 print(
-                    "Thank you for booking with Dangus Airline!\nTo see the menu options again type in [M]\nTo see exit your booking type in [E]")
+                    "\nThank you for booking with Dangus Airline!\nTo see the menu options again type in [M]\nTo see exit your booking type in [E]")
 
             elif passenger_choice.capitalize() == "Sydney":  # country 6
                 print("You are going to Sydney! \n")
                 from BookingApp.bookingMain import Bookingapp
-                print(Bookingapp.userStore())
+                ba = Bookingapp
+                ba.userStore()
                 print(
-                    "Thank you for booking with Dangus Airline!\nTo see the menu options again type in [M]\nTo see exit your booking type in [E]")
+                    "\nThank you for booking with Dangus Airline!\nTo see the menu options again type in [M]\nTo see exit your booking type in [E]")
 
             elif passenger_choice.capitalize() == "Vilnius":  # country 7
                 print("You are going to Vilnius! Please enter your passenger details to confirm booking: \n")
                 from BookingApp.bookingMain import Bookingapp
-                print(Bookingapp.userStore())
+                ba = Bookingapp
+                ba.userStore()
                 print(
-                    "Thank you for booking with Dangus Airline!\nTo see the menu options again type in [M]\nTo see exit your booking type in [E]")
+                    "\nThank you for booking with Dangus Airline!\nTo see the menu options again type in [M]\nTo see exit your booking type in [E]")
 
             elif passenger_choice.upper() == "M":  # to return to menu
                 print(fd1.menu())

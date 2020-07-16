@@ -55,6 +55,8 @@ class Assistant:
 
     def login_crew():
         print("Work in progress..... logging in as a crew member")
+        # method
+        # allows crew members to print out passenger list
 
     # if correct details are entered, user can look for details within make_booking method
     def make_booking():

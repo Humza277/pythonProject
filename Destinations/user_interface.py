@@ -19,6 +19,7 @@ class User_interaction:
                 if user_input == 1:
                     fd1 = FlightDetails()
                     print(fd1.choose_destination())
+                    user_exit = True
                 elif user_input == 2:
                     dd = FlightType()
                     print(dd.short_haul_flights())
@@ -40,8 +41,7 @@ class User_interaction:
                         | Welcome to the Dangus Airline login system!|
                         ==============================================
             """)
-                    a = Assistant()
-                    a.staff_or_passenger()
+                    print("Work in progress")
                 elif user_input == 6:
                     print("To book flight")
                     fd1.choose_destination()  # call create user method from booking main
@@ -58,7 +58,7 @@ class User_interaction:
 
 
 
-# # # Test
-ui = User_interaction()
-ui.user_interface()
+# # Test
+# ui = User_interaction()
+# ui.user_interface()
 
