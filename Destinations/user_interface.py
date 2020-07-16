@@ -1,3 +1,4 @@
+from Destinations.citiestoDatabase import DummyCities
 from Destinations.flight_scheduling import FlightDetails
 # from Destinations.long_shorthaul import FlightType
 from People.airportAssistant import Assistant
@@ -18,11 +19,11 @@ class User_interaction:
                     user_input = int(input("\nYour selection: \n"))
                 except Exception:
                     print("Invalid selection. Please try again.")
-                    from Destinations.citiestoDatabase import DummyCities
-                    dc = DummyCities
-                    dc.csv_to_dataframe()
+                    # dc = DummyCities
+                    # dc.csv_to_dataframe()
                 if user_input == 1:
                     fd1 = FlightDetails()
+                    fd1.list_all_destinations()
                     fd1.choose_destination()
                     # user_exit = True
                 elif user_input == 2:
@@ -60,6 +61,7 @@ class User_interaction:
             ==================================================
             """)
                     user_exit = True
+                    break
                 else:
                     print("Invalid selection. Please try again.")
 

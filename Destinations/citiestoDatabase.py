@@ -2,7 +2,7 @@ import pyodbc
 import pandas as pd
 import os
 from Destinations.databaseconnect import Databases
-
+from BookingApp.bookingMain import Bookingapp
 
 class DummyCities(Databases):
 
@@ -17,9 +17,11 @@ class DummyCities(Databases):
         data = pd.read_csv('mock_cities.csv')
         df = pd.DataFrame(data, columns=['country', 'city', 'country_code'])
         while True:
-            user_input = input("\nSelect your destination:\n")
+            user_input = input("\nSelect your destination:\n").capitalize()
             if df['city'].str.contains(user_input).any():
-                print(f"Yay we fly to {user_input}")
+                print(f"Congratulations you are going to {user_input}!")
+                bm = Bookingapp
+                bm.userStore()
                 break
             else:
                 print(f"Sorry we don't fly to {user_input} yet")
@@ -30,6 +32,6 @@ class DummyCities(Databases):
 
 
 #Test
-dc = DummyCities
+# dc = DummyCities
 # dc.csv_to_dataframe()
-dc.checking_city_exists()
+# dc.checking_city_exists()
