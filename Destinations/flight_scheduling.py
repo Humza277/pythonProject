@@ -23,6 +23,7 @@ class FlightDetails:
         """)
 
     @staticmethod
+    # change this method to database pull
     def list_all_destinations():
         print("Below are the following available destinations departing from London:\n")
         from Destinations.citiestoDatabase import DummyCities

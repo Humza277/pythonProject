@@ -40,6 +40,7 @@ class User_interaction:
                             """)
                     a = Assistant()
                     a.staff_or_passenger()
+                    a.login_passenger()
 
                 elif user_input == 5:
                     print("""

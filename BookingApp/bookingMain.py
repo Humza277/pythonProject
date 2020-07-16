@@ -40,7 +40,9 @@ class Bookingapp(Passenger):
                 passdata.write("%s,%s\n"%(key, passengerB[key]))
 
 
-
+    # assign the user tio a plane
+    def assign_plane(self):
+        pass
 # def createID(self, booking_ID):
 #     self.booking_ID = booking_ID
 #     if createUser = True

@@ -5,6 +5,7 @@ import hashlib
 import os
 import bcrypt
 
+
 # Creates class Assistant to enter for flight_attendant list
 
 class Assistant:
@@ -16,64 +17,64 @@ class Assistant:
 
         while s_or_p:
             try:
-                user_input = input("\nAre you a crew member or a passenger?\n\nType [C] to login as a crew member\nType [P] to login as a passenger\nYour selection:\n")
+                user_input = input(
+                    "\nAre you a crew member or a passenger?\n\nType [C] to login as a crew member\nType [P] to login as a passenger\nYour selection:\n")
             except Exception:
                 print("Invalid selection. Please type in [C] for crew member or [P] for passenger\n")
             if user_input.upper() == "P":
                 print("\nDirecting you to the passenger login page...\n")
                 a = Assistant
-                return(a.login_passenger())
+                return (a.login_passenger())
                 s_or_p = False
 
             elif user_input.upper() == "C":
                 print("\nDirecting you to the crew member login page...\n")
                 a = Assistant
-                return(a.login_crew())
+                return (a.login_crew())
                 s_or_p = False
             else:
                 print("\nInvalid selection. Please type in [C] for crew member or [P] for passenger")
 
-
     @staticmethod
     def login_passenger():
-        # count is set to 0 
+        pass
+
+    @staticmethod
+    def login_crew():
+        # count is set to 0
         count = 0
         # only runs code when code is < 3
         awd = b"forlorn"
         hashed = bcrypt.hashpw(awd, bcrypt.gensalt())
+        print(hashed)
         while True:
 
             userName = input("Please input user name: \n")
             password = input("Please input password: \n")
 
-
-
             count += 1
-            if count == 3:
+            if userName == 'assistant' and bcrypt.checkpw(awd, hashed):
+                print("W.I.P --- print the passenger list here")
+                break
+
+            elif count == 3:
                 # after 3 attempts, statement is printed
                 print("Too many tries... Exiting program")
-                # 3 attempts will stop the code 
+                # 3 attempts will stop the code
+                # add break and method call to creating a booking
                 break
             else:
-                
-                if userName == 'assistant' and bcrypt.checkpw(awd, hashed):
-                # add break and method call to creating a booking
-                    break
-                else:
-                    print("Incorrect username or password, try again")
+                print("Incorrect username or password, try again")
 
-    def login_crew():
-        try:
-            mb = databaseconnect.Databases()
-            query = "SELECT * FROM Destination WHERE Flight_Type = 'Short-haul';"
-            cursor = mb.create_cursor()
-            rows = cursor.execute(query)
-            for row in rows:
-                print(row)
-        # method
+        # method Ugne when you choose a location if it is a long haul it will assign the large plane
+        # if short haul assign small plane
         # allows crew members to print out passenger list
 
     # if correct details are entered, user can look for details within make_booking method
+    @staticmethod
+    def assign_plane():
+        pass
+        # assign a passenger to a plane if country is short assign small plane
 
     @staticmethod
     def make_booking():
@@ -89,8 +90,11 @@ class Assistant:
                 cursor.execute("SELECT * FROM Passengers WHERE PassengersID = ?", [passenger_ID])
                 row = cursor.fetchone()
                 print(row)
-                df = pd.DataFrame(row, columns=['PassengersID', 'FirstName', 'LastName',
-                                                'DOB', 'Booking_ID', 'Passport_Number'])
+
+                #df = pd.DataFrame(row, columns=['PassengersID', 'FirstName', 'LastName',
+                                               # 'DOB', 'Booking_ID', 'Passport_Number'])
+
+                # takes destination id
             except Exception:
                 print("Invalid passenger ID,\nInput a correct Passenger ID: \n")
                 continue
@@ -101,7 +105,6 @@ class Assistant:
     def selectdest():
         pass
 
-
 # if passenger_ID == "Next":
 #     print("Select the destination")
 #     cursor.execute("SELECT City FROM Destination")
@@ -109,10 +112,6 @@ class Assistant:
 #     print(drow)
 #     df['Destination'] = drow
 #     print(df)
-
-
-
-
 
 
 # Test
