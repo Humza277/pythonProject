@@ -73,11 +73,13 @@ class Assistant:
                 cursor.execute("SELECT * FROM Passengers WHERE PassengersID = ?", [passenger_ID])
                 row = cursor.fetchone()
                 print(row)
+
             except Exception:
-                print("Invalid passenger ID,\nInput a correct Passenger ID: \n")
-                continue
+                print("Invalid passenger ID\nInput a correct Passenger ID: \n")
+                # continue
             else:
-                print("")
+                print("What would you like to do?")
+
 # Test
 # a = Assistant()
 # a.staff_or_passenger()
