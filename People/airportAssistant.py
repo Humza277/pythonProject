@@ -1,4 +1,8 @@
-# Creates class Assistant to enter for flight_attendant list 
+from Destinations import databaseconnect
+from Destinations.databaseconnect import Databases
+
+# Creates class Assistant to enter for flight_attendant list
+
 class Assistant:
     # username and passwords are stored within data as attributes
     @staticmethod
@@ -23,10 +27,6 @@ class Assistant:
                 s_or_p = False
             else:
                 print("\nInvalid selection. Please type in [C] for crew member or [P] for passenger")
-
-
-
-
 
 
     @staticmethod
@@ -59,8 +59,14 @@ class Assistant:
         # allows crew members to print out passenger list
 
     # if correct details are entered, user can look for details within make_booking method
+
+    @staticmethod
     def make_booking():
-        pass
+        mb = databaseconnect.Databases()
+        cursor = mb.create_cursor()
+        passenger_ID = print("Input passenger ID")
+        cursor.execute("SELECT PassengersID FROM Passengers WHERE PassengersID = ?", [passenger_ID])
+        mb.commit()
 
 # Test
 # a = Assistant()

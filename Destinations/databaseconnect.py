@@ -3,6 +3,7 @@ import os
 import secretfile
 import sys
 
+
 class Databases:
     server = secretfile.server
     database = secretfile.database
@@ -10,7 +11,6 @@ class Databases:
     password = secretfile.password
 
     def __init__(self):
-
 
         try:
             self.connections = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER=' + self.server +
@@ -28,6 +28,7 @@ class Databases:
     def create_cursor(self):
         self.cursor = self.connections.cursor()
         return self.cursor
+
     print("Cursor established")
 
     # def use_database(self):
@@ -38,7 +39,3 @@ class Databases:
 # test
 d = Databases()
 d.create_cursor()
-
-
-
-

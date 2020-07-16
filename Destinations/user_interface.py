@@ -42,6 +42,7 @@ class User_interaction:
                         ==============================================
             """)
                     print("Work in progress")
+
                 elif user_input == 6:
                     print("To book flight")
                     fd1.choose_destination()  # call create user method from booking main
