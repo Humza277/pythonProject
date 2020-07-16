@@ -26,4 +26,17 @@ import pandas as pd
 
 # a = Airport_Assistant_Staff()
 # a.flight_attendant_list()
+#
+# def csv_to_dataframe():
+#     data = pd.read_csv('passengerlist.csv')
+#     df = pd.DataFrame(data)
+#     print(df)
+# csv_to_dataframe()
 
+# passenger_id, (first_name', 'last_name', 'dob',passenger_id)
+#
+#
+# def csv_to_dataframe():
+#     data = pd.read_csv('mock_cities.csv')
+#     df = pd.DataFrame(data, columns=['country', 'city', 'country_code'])
+#     print(df)
