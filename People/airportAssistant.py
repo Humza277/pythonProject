@@ -66,17 +66,18 @@ class Assistant:
         cursor = mb.create_cursor()
 
         make_booking_loop = True
-        passenger_ID = input("Input passenger ID:\n")
+
         while make_booking_loop:
             try:
+                passenger_ID = input("Input passenger ID:\n")
                 cursor.execute("SELECT * FROM Passengers WHERE PassengersID = ?", [passenger_ID])
                 row = cursor.fetchone()
                 print(row)
             except Exception:
-                print("Invalid passenger ID,\n Input a correct Passenger ID: \n")
+                print("Invalid passenger ID,\nInput a correct Passenger ID: \n")
                 continue
             else:
-                print("Invalid passenger ID,\n Input a correct Passenger ID: \n")
+                print("")
 # Test
 # a = Assistant()
 # a.staff_or_passenger()
