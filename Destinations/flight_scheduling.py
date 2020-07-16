@@ -10,7 +10,7 @@ class FlightDetails:
     # function to display all flight options
     @staticmethod
     def menu():
-        return ("""
+        print("""
         ===============================================
         | Welcome to the Dangus Flight Booking System! |
         ===============================================
@@ -30,7 +30,22 @@ class FlightDetails:
     def choose_destination():
         fd1 = FlightDetails()
         print("Below are the following available destinations departing from London:\n")
-        # print(fd1.display_destination())
+        # sql_command = "SELECT cities from destinations table"
+
+        while user_input == "M" or user_input == "Y":
+
+            try:
+                user_input = input("To make a booking type [Y] to return to the menu type [M]\nYour selection: \n")
+            except Exception:
+                print("Invalid selection. Please type in [Y] or [M]")
+            if user_input.upper() == "Y":
+                return fd1.display_destination()
+            elif user_input.upper() == "M":
+                print(fd1.menu())
+            else:
+                print("Invalid selection. Please type in [Y] or [M]")
+
+
         # sql_command = "SELECT cities from cities_list"
         # cursor = connection.cursor()
         # rows = cursor.execute(sql_command)

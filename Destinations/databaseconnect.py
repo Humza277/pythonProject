@@ -10,6 +10,8 @@ class Databases:
     password = secretfile.password
 
     def __init__(self):
+
+
         try:
             self.connections = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER=' + self.server +
                                               ';DATABASE=' + self.database + ';UID=' + self.username +
@@ -23,13 +25,19 @@ class Databases:
         except Exception:
             print("Did not connect")
 
-    def establish_cursor(self):
-        cursor = self.connections.cursor()
-        return cursor
+    def create_cursor(self):
+        self.cursor = self.connections.cursor()
+        return self.cursor
     print("Cursor established")
 
-# d = Databases()
-# d.establish_cursor()
+    # def use_database(self):
+    #     self.create_cursor()
+    #     self.cursor.execute("USE dangus_db")
+
+
+# test
+d = Databases()
+d.create_cursor()
 
 
 
