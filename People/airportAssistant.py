@@ -1,8 +1,8 @@
 # Creates class Assistant to enter for flight_attendant list 
 class Assistant:
     # username and passwords are stored within data as attributes
-    userName = "ass101"
-    password = "richard"
+    userName = "assistant1"
+    password = "wolo101"
     def login(self):
         # count is set to 0 
         count = 0
