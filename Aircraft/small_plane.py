@@ -10,7 +10,10 @@ class SmallPlane(Planes):
         self.flight_type = flight_type
 
 # creating an object
-sp_1 = SmallPlane("E195", 120, "16,213 Litres", "Short haul")
+sp_1 = SmallPlane("E195", 120, 16000, "Short haul")
+
+
+
 
 print(sp_1.flight_type)
 
