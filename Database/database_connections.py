@@ -29,3 +29,10 @@ class Database:
         return cursor  # return the value of allocated position of the cursor
 
 
+    # use the dangus_db database
+    def use_database(self):
+        self.establishing_connection()
+        self.create_cursor()
+        d = Database()
+        d.create_cursor().execute("use dangus_db")
+

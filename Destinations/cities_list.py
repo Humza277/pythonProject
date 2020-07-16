@@ -13,7 +13,8 @@ TO DO:
 we managed to retrieve unique countries 
 but we need name (city) and unique country 
 pull file to database
-export this file to flight_scheduling.py (Choose destination) cos Anais is hardcoding in countries != Good
+export this file to flight_scheduling.py (Choose destination) cos Anais is hardcoding in countries is BAD
+Anais to add method to append to current booking
 Booking method inside assistant method Humza 
 To create booking do stuff to link to aircraft 
 """
