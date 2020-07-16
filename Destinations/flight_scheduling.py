@@ -30,12 +30,15 @@ class FlightDetails:
     def choose_destination():
         fd1 = FlightDetails()
         print("Below are the following available destinations departing from London:\n")
-        # sql_command = "SELECT cities from destinations table"
+        from Destinations.citiestoDatabase import DummyCities
+        dc = DummyCities
+        dc.csv_to_dataframe()
+        # ba = Bookingapp
+        # ba.userStore()
         choosing = False
         while not choosing:
-
             try:
-                user_input = input("To make a booking type [Y] to return to the menu type [M]\nYour selection: \n")
+                user_input = input("\n\nTo make a booking type [Y] to return to the menu type [M]\n\nYour selection: \n")
             except Exception:
                 print("Invalid selection. Please type in [Y] or [M]")
             if user_input.upper() == "Y":
@@ -46,20 +49,6 @@ class FlightDetails:
                 choosing = True
             else:
                 print("Invalid selection. Please type in [Y] or [M]")
-
-
-        # sql_command = "SELECT cities from cities_list"
-        # cursor = connection.cursor()
-        # rows = cursor.execute(sql_command)
-        # for row in rows:
-        #     print(row)
-        #     print("Type E in the keyboard to exit")
-        #     print("Type M in the keyboard to return to the menu")
-
-    # retrieve data from the database, list of destination
-    # if chosen destination not in database, raise Error, display flight destination options
-    # SELECT cities from cities_list
-    # display available destinations for passengers to view
 
     @staticmethod
     def display_destination():
@@ -78,11 +67,10 @@ class FlightDetails:
         # query_result = "SELECT City FROM Destination} "
         # rows = cursor.execute(query_result)
 
-        if passenger_choice.capitalize() in rows:  # country 1
+        if passenger_choice.capitalize() == "Paris": # country 1
             print("You are going to Paris!")
             from BookingApp.bookingMain import Bookingapp
-            ba = Bookingapp
-            ba.userStore()
+
             after_booking = input("\nType in [M] to return to the Menu or [E] to Exit your booking\nYour selection:\n")
             if after_booking == "M":
                 return fd1.menu(), fd1.display_destination()
@@ -123,7 +111,7 @@ class FlightDetails:
 
 
 # Test
-# fd1 = FlightDetails()
-# fd1.menu()
-# fd1.choose_destination()
-# fd1.display_destination()
+fd1 = FlightDetails()
+fd1.menu()
+fd1.display_destination()
+fd1.choose_destination()

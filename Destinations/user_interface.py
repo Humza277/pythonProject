@@ -1,5 +1,5 @@
 from Destinations.flight_scheduling import FlightDetails
-from Destinations.long_shorthaul import FlightType
+# from Destinations.long_shorthaul import FlightType
 from People.airportAssistant import Assistant
 # from BookingApp.check_booking import CheckingPassenger
 
@@ -18,16 +18,21 @@ class User_interaction:
                     user_input = int(input("\nYour selection: \n"))
                 except Exception:
                     print("Invalid selection. Please try again.")
+                    from Destinations.citiestoDatabase import DummyCities
+                    dc = DummyCities
+                    dc.csv_to_dataframe()
                 if user_input == 1:
                     fd1 = FlightDetails()
                     fd1.choose_destination()
                     # user_exit = True
                 elif user_input == 2:
-                    dd = FlightType()
-                    dd.short_haul_flights()
+                    print("Short haul flights unavailable. Server down")
+                    # dd = FlightType()
+                    # dd.short_haul_flights()
                 elif user_input == 3:
-                    dd = FlightType()
-                    dd.long_haul_flights()
+                    # dd = FlightType()
+                    # dd.long_haul_flights()
+                    print("Long haul flights unavailable. Server down")
                 elif user_input == 4:
                     print("""
                         ==============================================
@@ -62,6 +67,6 @@ class User_interaction:
 
 
 # Test
-# ui = User_interaction()
-# ui.user_interface()
+ui = User_interaction()
+ui.user_interface()
 
