@@ -17,11 +17,11 @@ class FlightDetails:
 
         Please choose one of the following options:
         [1] To choose a destination 
-        [2] To display all short haul flights, retrieve data from database)
-        [3] To find the longest flight OR (display all long haul flights, retrieve data from database) 
-        [4] To see your booking (insert booking ID, validate it against database to retrieve booking) 
+        [2] To display all short haul flights
+        [3] To display all long haul flights
+        [4] To see your booking details 
         [5] To add a passenger to a current booking 
-        [6] To book a flight (passenger details, import create user from booking main, ) 
+        [6] To book a flight
         [7] To exit 
         """)
 
