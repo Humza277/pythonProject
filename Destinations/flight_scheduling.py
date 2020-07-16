@@ -19,8 +19,7 @@ class FlightDetails:
         [3] To display all long haul flights
         [4] To see your booking details 
         [5] To add a passenger to a current booking 
-        [6] To book a flight
-        [7] To exit 
+        [6] To exit 
         """)
 
     @staticmethod

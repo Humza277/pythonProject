@@ -1,5 +1,5 @@
 import pyodbc
-from Database.database_connections import *
+from Destinations.databaseconnect import Databases
 
 
 class Airport_Assistant_Staff:

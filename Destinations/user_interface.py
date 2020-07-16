@@ -1,6 +1,6 @@
 from Destinations.citiestoDatabase import DummyCities
 from Destinations.flight_scheduling import FlightDetails
-# from Destinations.long_shorthaul import FlightType
+from Destinations.long_shorthaul import FlightType
 from People.airportAssistant import Assistant
 # from BookingApp.check_booking import CheckingPassenger
 
@@ -27,13 +27,11 @@ class User_interaction:
                     fd1.choose_destination()
                     # user_exit = True
                 elif user_input == 2:
-                    print("Short haul flights unavailable. Server down")
-                    # dd = FlightType()
-                    # dd.short_haul_flights()
+                    dd = FlightType()
+                    dd.short_haul_flights()
                 elif user_input == 3:
-                    # dd = FlightType()
-                    # dd.long_haul_flights()
-                    print("Long haul flights unavailable. Server down")
+                    dd = FlightType()
+                    dd.long_haul_flights()
                 elif user_input == 4:
                     print("""
                         ==============================================
@@ -52,9 +50,6 @@ class User_interaction:
                     b = Assistant()
                     b.make_booking()
                 elif user_input == 6:
-                    print("To book flight")
-                    fd1.choose_destination()  # call create user method from booking main
-                elif user_input == 7:
                     print("""
             ==================================================
             | Thank you for visiting! I hope to see you again |

@@ -55,7 +55,13 @@ class Assistant:
                     print("Incorrect username or password, try again")
 
     def login_crew():
-        print("Work in progress..... logging in as a crew member")
+        try:
+            mb = databaseconnect.Databases()
+            query = "SELECT * FROM Destination WHERE Flight_Type = 'Short-haul';"
+            cursor = mb.create_cursor()
+            rows = cursor.execute(query)
+            for row in rows:
+                print(row)
         # method
         # allows crew members to print out passenger list
 
