@@ -64,10 +64,19 @@ class Assistant:
     def make_booking():
         mb = databaseconnect.Databases()
         cursor = mb.create_cursor()
-        passenger_ID = print("Input passenger ID")
-        cursor.execute("SELECT PassengersID FROM Passengers WHERE PassengersID = ?", [passenger_ID])
-        mb.commit()
 
+        make_booking_loop = True
+        passenger_ID = input("Input passenger ID:\n")
+        while make_booking_loop:
+            try:
+                cursor.execute("SELECT * FROM Passengers WHERE PassengersID = ?", [passenger_ID])
+                row = cursor.fetchone()
+                print(row)
+            except Exception:
+                print("Invalid passenger ID,\n Input a correct Passenger ID: \n")
+                continue
+            else:
+                print("Invalid passenger ID,\n Input a correct Passenger ID: \n")
 # Test
 # a = Assistant()
 # a.staff_or_passenger()

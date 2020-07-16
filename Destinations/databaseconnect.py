@@ -27,9 +27,9 @@ class Databases:
 
     def create_cursor(self):
         self.cursor = self.connections.cursor()
+        #print("Cursor established")
         return self.cursor
 
-    print("Cursor established")
 
     # def use_database(self):
     #     self.create_cursor()

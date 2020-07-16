@@ -36,13 +36,14 @@ class User_interaction:
                     a.staff_or_passenger()
 
                 elif user_input == 5:
-                    print("""
-                        ==============================================
-                        | Welcome to the Dangus Airline login system!|
-                        ==============================================
-            """)
-                    print("Work in progress")
-
+            #         print("""
+            #             ==============================================
+            #             | Welcome to the Dangus Airline login system!|
+            #             ==============================================
+            # """)
+            #         print("Work in progress")
+                    b = Assistant()
+                    b.make_booking()
                 elif user_input == 6:
                     print("To book flight")
                     fd1.choose_destination()  # call create user method from booking main
