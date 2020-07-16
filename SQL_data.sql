@@ -163,5 +163,13 @@ VALUES
 SELECT * FROM Airplane
 
 
+____
+SELECT p.First_name, p.PassengersID,d.City FROM Passengers p
+JOIN Booking_Details bd on bd.PassengersID = p.PassengersID
+JOIN Destination d on bd.Destination_ID = d.Destination_ID
+WHERE City = 'Oslo';
 
 
+SELECT * FROM Destination;
+SELECT * FROM Destination WHERE Flight_Type = 'Short-haul';
+SELECT * FROM Destination WHERE Flight_Type = 'Long-haul';
