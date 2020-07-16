@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import itertools as it
 from BookingApp.bookingMain import Bookingapp
-
+import secretfile
 # import database
 
 class FlightDetails:
@@ -75,7 +75,10 @@ class FlightDetails:
             print(row)
             print("To exit type E")
 
-        if passenger_choice.capitalize() == "Paris":  # country 1
+        # query_result = "SELECT City FROM Destination} "
+        # rows = cursor.execute(query_result)
+
+        if passenger_choice.capitalize() in rows:  # country 1
             print("You are going to Paris!")
             from BookingApp.bookingMain import Bookingapp
             ba = Bookingapp
