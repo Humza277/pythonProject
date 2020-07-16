@@ -77,14 +77,6 @@ class Assistant:
                 print(row)
                 df = pd.DataFrame(row, columns=['PassengersID', 'FirstName', 'LastName',
                                                 'DOB', 'Booking_ID', 'Passport_Number'])
-                if passenger_ID == "Next":
-                    print("Select the destination")
-                    cursor.execute("SELECT City FROM Destination")
-                    drow = cursor.fetchall()
-                    print(drow)
-                    df['Destination'] = drow
-                    print(df)
-
             except Exception:
                 print("Invalid passenger ID,\nInput a correct Passenger ID: \n")
                 continue
@@ -96,9 +88,13 @@ class Assistant:
         pass
 
 
-
-
-
+# if passenger_ID == "Next":
+#     print("Select the destination")
+#     cursor.execute("SELECT City FROM Destination")
+#     drow = cursor.fetchall()
+#     print(drow)
+#     df['Destination'] = drow
+#     print(df)
 
 
 
