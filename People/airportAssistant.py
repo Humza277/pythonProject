@@ -3,28 +3,28 @@ class Assistant:
     # username and passwords are stored within data as attributes
     @staticmethod
     def staff_or_passenger():
-        user_exit = False
+        s_or_p = True
 
-        while not user_exit:
+        while s_or_p:
             try:
                 user_input = input("\nAre you a crew member or a passenger?\n\nType [C] to login as a crew member\nType [P] to login as a passenger\nYour selection:\n")
             except Exception:
                 print("Invalid selection. Please type in [C] for crew member or [P] for passenger\n")
             if user_input.upper() == "P":
-                print("\nDirecting you to the passenger login...\n")
+                print("\nDirecting you to the passenger login page...\n")
                 a = Assistant
                 return(a.login_passenger())
-                user_exit = True
+                s_or_p = False
 
             elif user_input.upper() == "C":
                 print("\nDirecting you to the crew member login page...\n")
                 a = Assistant
                 return(a.login_crew())
-                user_exit = True
+                s_or_p = False
             else:
-                print("Invalid choice")
+                print("\nInvalid selection. Please type in [C] for crew member or [P] for passenger")
 
-    # test
+
 
 
 
@@ -61,5 +61,5 @@ class Assistant:
         pass
 
 # Test
-a = Assistant()
-a.staff_or_passenger()
+# a = Assistant()
+# a.staff_or_passenger()

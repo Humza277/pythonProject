@@ -5,14 +5,15 @@ from People.airportAssistant import Assistant
 
 class User_interaction:
 
-    @staticmethod
-    def user_interface():
-        fd1 = FlightDetails()
-        print(fd1.menu())
-        user_exit = False
-        while not user_exit:
+    user_exit = False
+    while not user_exit:
+
+        @staticmethod
+        def user_interface():
 
             try:
+                fd1 = FlightDetails()
+                fd1.menu()
                 user_input = int(input("\nYour selection: \n"))
             except Exception:
                 print("Invalid selection. Please try again.")
