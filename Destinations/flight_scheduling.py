@@ -56,13 +56,16 @@ class FlightDetails:
         fd1 = FlightDetails()
         # continue_program = True
         # while continue_program:
-        try:
-            passenger_choice = input("Please type in your choice: \n")
-        except ValueError:
-            print(
-                "Sorry! We currently do not fly to your chosen destination. Please select a valid city. Below is a list of available cities")
-            print(row)
-            print("To exit type E")
+        # try:
+            # passenger_choice = input("Please type in the destintion you would like to travel to: \n")
+            from Destinations.citiestoDatabase import DummyCities
+            dc = DummyCities
+            dc.csv_to_dataframe()
+            dc.checking_city_exists()
+        # except ValueError:
+        #     print(
+        #         "Sorry! We currently do not fly to your chosen destination. Please select a valid city. Below is a list of available cities")
+        #     print("To exit type E")
 
         # query_result = "SELECT City FROM Destination} "
         # rows = cursor.execute(query_result)

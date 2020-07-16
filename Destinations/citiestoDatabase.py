@@ -12,8 +12,24 @@ class DummyCities(Databases):
         df = pd.DataFrame(data, columns=['country', 'city', 'country_code'])
         print(df)
 
+
     def checking_city_exists():
-        pass
-#
-# dc = DummyCities
+        data = pd.read_csv('mock_cities.csv')
+        df = pd.DataFrame(data, columns=['country', 'city', 'country_code'])
+        while True:
+            user_input = input("\nSelect your destination:\n")
+            if df['city'].str.contains(user_input).any():
+                print(f"Yay we fly to {user_input}")
+                break
+            else:
+                print(f"Sorry we don't fly to {user_input} yet")
+
+
+
+
+
+
+#Test
+dc = DummyCities
 # dc.csv_to_dataframe()
+dc.checking_city_exists()
