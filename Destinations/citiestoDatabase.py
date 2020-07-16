@@ -13,7 +13,7 @@ Databases to display = list of cities
 Passenger details (passengerlist.csv)
 
 """
-# d = Databases()
+d = Databases()
 
 
 # Importing csv
@@ -23,10 +23,10 @@ def csv_to_dataframe():
     print(df)
 csv_to_dataframe()
 
-def create_table():
-    d = Databases()
-    cursor = d.establish_cursor()
-    cursor.execute('CREATE TABLE cities_list (Country varchar(50), Geonameid int, Name varchar(50), City varchar(50)')
+# def create_table():
+#     d = Databases()
+#     cursor = d.establish_cursor()
+#     cursor.execute('CREATE TABLE cities_list (Country varchar(50), Geonameid int, Name varchar(50), City varchar(50)')
 
 # def insert_df_to_table():
 #     d = Databases()

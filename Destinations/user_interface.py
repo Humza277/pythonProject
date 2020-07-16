@@ -18,8 +18,8 @@ class User_interaction:
                     print("Invalid selection. Please try again.")
                 if user_input == 1:
                     fd1 = FlightDetails()
-                    print(fd1.choose_destination())
-                    user_exit = True
+                    fd1.choose_destination()
+                    # user_exit = True
                 elif user_input == 2:
                     dd = FlightType()
                     print(dd.short_haul_flights())
