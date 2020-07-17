@@ -1,3 +1,4 @@
+from Destinations.flight_scheduling import FlightDetails
 from Destinations import databaseconnect
 # import pandas as pd
 # Display all short haul flights method
@@ -25,7 +26,7 @@ class FlightType:
             print("Server is down. Please try reconnecting")
         # else:
         #     dd = FlightDetails()
-        #     dd.display_destination()
+        #     dd.list_all_destinations()
 
 
     @staticmethod
@@ -48,9 +49,10 @@ class FlightType:
             print("Server is down. Please try reconnecting")
         # else:
         #     dd = FlightDetails()
-        #     dd.display_destination()
+        #     dd.list_all_destinations()
 
 
 
 # ft = FlightType()
 # ft.short_haul_flights()
+# ft.long_haul_flights()

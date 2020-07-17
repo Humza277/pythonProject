@@ -1,3 +1,4 @@
+from Destinations.databaseconnect import Databases
 from Destinations.citiestoDatabase import DummyCities
 from BookingApp.bookingMain import Bookingapp
 import secretfile
@@ -21,6 +22,12 @@ class FlightDetails:
         [5] To add a passenger to a current booking 
         [6] To exit 
         """)
+
+
+    @staticmethod
+    def list_all_destinations():
+        pass
+
 
     @staticmethod
     # change this method to database pull
