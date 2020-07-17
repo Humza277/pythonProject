@@ -1,4 +1,3 @@
-from Destinations import databaseconnect
 from Destinations.databaseconnect import Databases
 from Destinations.flight_scheduling import FlightDetails
 import pandas as pd
@@ -63,6 +62,15 @@ class Assistant:
         # allows crew members to print out passenger list
 
     # if correct details are entered, user can look for details within make_booking method
+    def get_attendee_list():
+        mb = databaseconnect.Databases()
+        cursor = mb.create_cursor()
+        get_passenger_list = input("Type in Flight ID to retrieve full passenger list for a flight:\n")
+        cursor.execute("SELECT p.First_name, p.PassengersID,d.City FROM Passengers p JOIN Booking_Details bd on bd.PassengersID = p.PassengersID JOIN Destination d on bd.Destination_ID = d.Destination_ID WHERE City = ?", [get_passenger_list])
+        row = cursor.fetchone()
+        # FlightDetails.choose_destination(row)
+
+
     @staticmethod
     def assign_plane():
         pass
@@ -104,5 +112,6 @@ class Assistant:
 
 
 # Test
-# a = Assistant()
+a = Assistant()
+a.get_attendee_list()
 # a.staff_or_passenger()

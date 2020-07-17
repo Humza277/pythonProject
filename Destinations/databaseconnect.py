@@ -1,15 +1,18 @@
 import pyodbc
 import os
-import secretfile
+# import secretfile
 import sys
 
 
 class Databases:
-    server = secretfile.server
-    database = secretfile.database
-    username = secretfile.username
-    password = secretfile.password
-
+    # server = secretfile.server
+    # database = secretfile.database
+    # username = secretfile.username
+    # password = secretfile.password
+    server = 'databases.spartaglobal.academy'
+    database = 'dangus_db'
+    username = 'SA'
+    password = 'Passw0rd2018'
     def __init__(self):
 
         try:
