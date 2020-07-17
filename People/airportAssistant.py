@@ -19,26 +19,17 @@ class Assistant:
         while s_or_p:
             try:
                 user_input = input(
-                    "\nAre you a crew member or a passenger?\n\nType [C] to login as a crew member\nType [P] to login as a passenger\nYour selection:\n")
+                    "\nType [C] to view booking\nYour selection:\n")
             except Exception:
-                print("Invalid selection. Please type in [C] for crew member or [P] for passenger\n")
-            if user_input.upper() == "P":
-                print("\nDirecting you to the passenger login page...\n")
-                a = Assistant
-                return (a.login_passenger())
-                s_or_p = False
-
-            elif user_input.upper() == "C":
+                print("Invalid selection. Please type in [C]\n")
+            if user_input.upper() == "C":
                 print("\nDirecting you to the crew member login page...\n")
                 a = Assistant
                 return (a.login_crew())
                 s_or_p = False
             else:
-                print("\nInvalid selection. Please type in [C] for crew member or [P] for passenger")
+                print("\nInvalid selection. Please type in [C] to login as a crew member")
 
-    @staticmethod
-    def login_passenger():
-        pass
 
     @staticmethod
     def login_crew():
