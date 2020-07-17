@@ -96,9 +96,10 @@ class Assistant:
         while make_booking_loop:
             try:
                 passenger_ID = input("Input passenger ID:\n")
-                row = cursor.execute("SELECT * FROM Passengers WHERE PassengersID = ?", [passenger_ID])
-                #row = cursor.fetchone()
-                FlightDetails.choose_destination(row)
+                cursor.execute("SELECT * FROM Passengers WHERE PassengersID = ?", [passenger_ID])
+                row = cursor.fetchone()
+                print(row)
+                #FlightDetails.choose_destination(row)
                 break
 
 

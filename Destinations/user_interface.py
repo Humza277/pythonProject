@@ -11,8 +11,8 @@ class User_interaction:
         @staticmethod
         def user_interface():
 
-            user_exit = False
-            while not user_exit:
+            count = 0
+            while count != 1:
                 fd1 = FlightDetails()
                 fd1.menu()
                 try:
@@ -56,8 +56,8 @@ class User_interaction:
             | Thank you for visiting! I hope to see you again |
             ==================================================
             """)
-                    user_exit = True
-                    break
+                    count += 1
+
                 else:
                     print("Invalid selection. Please try again.")
 
