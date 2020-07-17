@@ -123,7 +123,15 @@ VALUES
 (1072, 'Germany', 'Berlin', 66, 'Short-haul'),
 (4011, 'Germany', 'Munich', 98, 'Short-haul'),
 (1101, 'Czezh Republic', 'Prague', 45, 'Short-haul'),
-(6011, 'Hungary', 'Budapest', 21, 'Short-haul')
+(6011, 'Hungary', 'Budapest', 21, 'Short-haul'),
+(1050, 'China', 'Beijing', 23, 'Long-Haul'),
+(1030, 'China', 'Shanghai', 30, 'Long-Haul'),
+(1031, 'Argentina', 'Buenos_Aires', 100, 'Long-Haul'),
+(1032, 'Chile', 'Santiago', 101, 'Long-Haul'),
+(1033, 'Colombia', 'Bogota', 102, 'Long-Haul'),
+(1034, 'Spain', 'San_Sebastian', 103, 'Short-Haul'),
+(1035, 'France', 'Marseille', 104, 'Short-Haul'),
+(1036, 'Russia', 'Moscow', 105, 'Long-Haul'),
 
 INSERT INTO Destination
 VALUES
