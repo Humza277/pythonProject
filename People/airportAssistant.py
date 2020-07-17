@@ -96,12 +96,11 @@ class Assistant:
         while make_booking_loop:
             try:
                 passenger_ID = input("Input passenger ID:\n")
-                cursor.execute("SELECT * FROM Passengers WHERE PassengersID = ?", [passenger_ID])
-                row = cursor.fetchone()
+                row = cursor.execute("SELECT * FROM Passengers WHERE PassengersID = ?", [passenger_ID])
+                #row = cursor.fetchone()
                 FlightDetails.choose_destination(row)
                 break
-                #df = pd.DataFrame(row, columns=['PassengersID', 'FirstName', 'LastName',
-                                               # 'DOB', 'Booking_ID', 'Passport_Number'])
+
 
                 # takes destination id
             except Exception:

@@ -1,8 +1,12 @@
+import csv
+
 from Destinations.databaseconnect import Databases
 from Destinations.citiestoDatabase import DummyCities
 from BookingApp.bookingMain import Bookingapp
 import secretfile
 from Destinations import databaseconnect
+import pandas as pd
+
 
 class FlightDetails:
 
@@ -23,11 +27,9 @@ class FlightDetails:
         [6] To exit 
         """)
 
-
     @staticmethod
     def list_all_destinations():
         pass
-
 
     @staticmethod
     # change this method to database pull
@@ -47,30 +49,27 @@ class FlightDetails:
         cursor = mb.create_cursor()
         while not choosing:
             try:
-                #from Destinations.citiestoDatabase import DummyCities
-                #dc = DummyCities
-                #dc.checking_city_exists()
+                # from Destinations.citiestoDatabase import DummyCities
+                # dc = DummyCities
+                # dc.checking_city_exists()
                 cursor.execute("SELECT * FROM Destination")
                 dt = cursor.fetchall()
                 for dt in dt:
                     print(dt)
                 das = input("Please enter a DestinationID:\n")
+
                 cursor.execute("SELECT d.Destination_ID, d.Country, d.City, d.Flight_Price, "
                                "d.Flight_Type, a.Flight_Number "
                                "FROM Destination d JOIN Airplane a on a.Destination_ID = d.Destination_ID "
                                "WHERE d.Destination_ID = ?", [das])
-                gh = cursor.fetchone()
-                print(row)
-                print(gh)
 
+                dest = cursor.fetchone()
+                # print(dest)
 
-
-
-
-
-
-
+                FlightDetails.sql_to_csv(dest)
                 user_input = input("\n\nType [M] to return to the menu\n\nYour selection: \n")
+
+
             except Exception:
                 print("Invalid selection. Please type [M] to return to the menu")
             if user_input.upper() == "Y":
@@ -81,6 +80,11 @@ class FlightDetails:
                 choosing = True
             else:
                 print("Invalid selection. Please type in [Y] or [M]")
+
+    @staticmethod
+    def sql_to_csv(dest):
+        with open("dest+flightnumb.csv", 'a+') as dest1:
+            dest1.write(dest)
 
 # Test
 # fd1 = FlightDetails()
