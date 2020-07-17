@@ -1,5 +1,6 @@
 from Destinations import databaseconnect
 from Destinations.databaseconnect import Databases
+from Destinations.flight_scheduling import FlightDetails
 import pandas as pd
 import hashlib
 import os
@@ -85,21 +86,18 @@ class Assistant:
 
         while make_booking_loop:
             try:
-                passenger_ID = input("Input passenger ID:\ntype Next after you have entered all the required passengers"
-                                     "\nThen select the passengers destination")
+                passenger_ID = input("Input passenger ID:\n")
                 cursor.execute("SELECT * FROM Passengers WHERE PassengersID = ?", [passenger_ID])
                 row = cursor.fetchone()
-                print(row)
-
+                FlightDetails.choose_destination(row)
+                break
                 #df = pd.DataFrame(row, columns=['PassengersID', 'FirstName', 'LastName',
                                                # 'DOB', 'Booking_ID', 'Passport_Number'])
 
                 # takes destination id
             except Exception:
                 print("Invalid passenger ID,\nInput a correct Passenger ID: \n")
-                continue
-            else:
-                print("")
+
 
     @staticmethod
     def selectdest():

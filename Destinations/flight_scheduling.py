@@ -1,7 +1,7 @@
 from Destinations.citiestoDatabase import DummyCities
 from BookingApp.bookingMain import Bookingapp
 import secretfile
-# import database
+from Destinations import databaseconnect
 
 class FlightDetails:
 
@@ -32,15 +32,27 @@ class FlightDetails:
 
     # Function to retrieve all cities available in the database
     @staticmethod
-    def choose_destination():
+    def choose_destination(row):
         fd1 = FlightDetails
         bm = Bookingapp
         choosing = False
+        mb = databaseconnect.Databases()
+        cursor = mb.create_cursor()
         while not choosing:
             try:
-                from Destinations.citiestoDatabase import DummyCities
-                dc = DummyCities
-                dc.checking_city_exists()
+                #from Destinations.citiestoDatabase import DummyCities
+                #dc = DummyCities
+                #dc.checking_city_exists()
+                cursor.execute("SELECT * FROM Destination")
+                dt = cursor.fetchall()
+                print(row)
+                print(dt)
+
+
+
+
+
+
                 user_input = input("\n\nType [M] to return to the menu\n\nYour selection: \n")
             except Exception:
                 print("Invalid selection. Please type [M] to return to the menu")
