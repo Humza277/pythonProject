@@ -1,8 +1,7 @@
+from Destinations import databaseconnect
 from Destinations.databaseconnect import Databases
 from Destinations.flight_scheduling import FlightDetails
 import pandas as pd
-import hashlib
-import os
 import bcrypt
 
 
@@ -45,8 +44,14 @@ class Assistant:
 
             count += 1
             if userName == 'assistant' and bcrypt.checkpw(awd, hashed):
-                print("W.I.P --- print the passenger list here")
-                break
+
+                print("Login Successful")
+                while True:
+                    hum = input("Type in [Y] to get passenger list:").capitalize()
+
+                    if hum == "Y":
+                        Assistant.get_attendee_list()
+                    break
 
             elif count == 3:
                 # after 3 attempts, statement is printed
@@ -62,13 +67,18 @@ class Assistant:
         # allows crew members to print out passenger list
 
     # if correct details are entered, user can look for details within make_booking method
+    @staticmethod
     def get_attendee_list():
         mb = databaseconnect.Databases()
         cursor = mb.create_cursor()
-        get_passenger_list = input("Type in Flight ID to retrieve full passenger list for a flight:\n")
-        cursor.execute("SELECT p.First_name, p.PassengersID,d.City FROM Passengers p JOIN Booking_Details bd on bd.PassengersID = p.PassengersID JOIN Destination d on bd.Destination_ID = d.Destination_ID WHERE City = ?", [get_passenger_list])
-        row = cursor.fetchone()
+        get_passenger_list = input("Type in Destination E.G Rome to retrieve "
+                                   "full passenger list for a flight:\n").capitalize()
+        cursor.execute("SELECT p.First_name, p.PassengersID,d.City FROM Passengers p JOIN Booking_Details bd on "
+                       "bd.PassengersID = p.PassengersID JOIN "
+                       "Destination d on bd.Destination_ID = d.Destination_ID WHERE City = ?", [get_passenger_list])
+        row = cursor.fetchmany(10)
         # FlightDetails.choose_destination(row)
+        print(row)
 
 
     @staticmethod
@@ -113,5 +123,5 @@ class Assistant:
 
 # Test
 a = Assistant()
-a.get_attendee_list()
+#a.get_attendee_list()
 # a.staff_or_passenger()
