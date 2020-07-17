@@ -12,8 +12,5 @@ class SmallPlane(Planes):
 # creating an object
 sp_1 = SmallPlane("E195", 120, 16000, "Short haul")
 
-
-
-
-print(sp_1.flight_type)
+# print(sp_1.flight_type)
 
