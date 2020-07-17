@@ -75,7 +75,7 @@ class Assistant:
                                    "full passenger list for a flight:\n").capitalize()
         cursor.execute("SELECT p.First_name, p.PassengersID,d.City FROM Passengers p JOIN Booking_Details bd on "
                        "bd.PassengersID = p.PassengersID JOIN "
-                       "Destination d on bd.Destination_ID = d.Destination_ID WHERE City = ?", [get_passenger_list])
+                       "Destination d on bd.Destination_ID = d.Destination_ID WHERE d.City = ?", [get_passenger_list])
         row = cursor.fetchmany(10)
         # FlightDetails.choose_destination(row)
         print(row)

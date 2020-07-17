@@ -52,8 +52,18 @@ class FlightDetails:
                 #dc.checking_city_exists()
                 cursor.execute("SELECT * FROM Destination")
                 dt = cursor.fetchall()
+                for dt in dt:
+                    print(dt)
+                das = input("Please enter a DestinationID:\n")
+                cursor.execute("SELECT d.Destination_ID, d.Country, d.City, d.Flight_Price, "
+                               "d.Flight_Type, a.Flight_Number "
+                               "FROM Destination d JOIN Airplane a on a.Destination_ID = d.Destination_ID "
+                               "WHERE d.Destination_ID = ?", [das])
+                gh = cursor.fetchone()
                 print(row)
-                print(dt)
+                print(gh)
+
+
 
 
 
