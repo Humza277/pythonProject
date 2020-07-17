@@ -12,4 +12,4 @@ class LargePlane(Planes):
 # creating an object
 lp_1 = LargePlane("A380", 538, 320000, "Long haul")
 
-print(lp_1.flight_type)
+# print(lp_1.flight_type)
