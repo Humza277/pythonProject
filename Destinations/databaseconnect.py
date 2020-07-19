@@ -25,6 +25,7 @@ class Databases:
                     ==========================================================
             """)
             # self.cursor = self.connections.cursor()
+            self.connections.commit()
         except Exception:
             print("Did not connect")
 

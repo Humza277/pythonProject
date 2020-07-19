@@ -41,30 +41,47 @@ class FlightDetails:
 
     # Function to retrieve all cities available in the database
     @staticmethod
-    def choose_destination():
+    def choose_destination(row):
         fd1 = FlightDetails
         bm = Bookingapp
         choosing = False
         mb = databaseconnect.Databases()
         cursor = mb.create_cursor()
+
         while not choosing:
             try:
-                from Destinations.citiestoDatabase import DummyCities
-                dc = DummyCities
-                dc.checking_city_exists()
+                # from Destinations.citiestoDatabase import DummyCities
+                # dc = DummyCities
+                # dc.checking_city_exists()
                 cursor.execute("SELECT * FROM Destination")
                 dt = cursor.fetchall()
-                # for dt in dt:
-                #     print(dt)
-                # das = input("Please enter a DestinationID:\n")
-                #
-                # cursor.execute("SELECT d.Destination_ID, d.Country, d.City, d.Flight_Price, "
-                #                "d.Flight_Type, a.Flight_Number "
-                #                "FROM Destination d JOIN Airplane a on a.Destination_ID = d.Destination_ID "
-                #                "WHERE d.Destination_ID = ?", [das])
-                #
-                # dest = cursor.fetchone()
-                # # print(dest)
+                for dt in dt:
+                    print(dt)
+                das = input("Please enter a DestinationID:\n")
+
+                cursor.execute("SELECT d.Destination_ID, d.Country, d.City, d.Flight_Price, "
+                               "d.Flight_Type, a.Flight_Number "
+                               "FROM Destination d JOIN Airplane a on a.Destination_ID = d.Destination_ID "
+                               "WHERE d.Destination_ID = ?", [das])
+
+                dest = cursor.fetchone()
+                dest_l = list(dest)
+                row_l = list(row)
+                print(dest_l)
+                print(row_l)
+
+
+                query = f"""
+                INSERT INTO Booking_Details(Booking_ID, Flight_Number, PassengersID, Destination_ID, Flight_Price)
+                    Values('{row_l[4]}' , '{dest_l[5]}', '{row_l[0]}', '{dest_l[0]}', '{dest_l[3]}')"""
+                cursor.execute(query)
+                cursor.commit()
+
+
+                cursor.execute('SELECT * FROM Booking_Details')
+                rob = cursor.fetchall()
+                print(rob)
+
                 #
                 # FlightDetails.sql_to_csv(dest)
                 user_input = input("\n\nType [M] to return to the menu\n\nYour selection: \n")

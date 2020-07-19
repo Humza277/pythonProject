@@ -99,11 +99,9 @@ class Assistant:
                 cursor.execute("SELECT * FROM Passengers WHERE PassengersID = ?", [passenger_ID])
                 row = cursor.fetchone()
                 print(row)
-                #FlightDetails.choose_destination(row)
+                FlightDetails.choose_destination(row)
                 break
 
-
-                # takes destination id
             except Exception:
                 print("Invalid passenger ID,\nInput a correct Passenger ID: \n")
 
