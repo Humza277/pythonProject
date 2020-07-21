@@ -102,29 +102,3 @@ passports, so that i can check their identity document
 * [Flights Prices](FlightPrices/README.md) 
 * [People](People/README.md) 
 
-# To do
-method Ugne when you choose a location if it is a long haul it will assign the large plane 
-
-if short haul assign small plane
-
-add option to assign plane 
-
-add while loop to booking
-
-
-
-change user menu refactor the options to make sense
-
-refactor option 1 - needs to draw from the database not from csv 
-
-use data frames for options 2 and 3 
-
-option 4 needs a change 
-
-destination needs passenger id row + destination row concatinate the two together
-
-destination already has the long or short haul assigned to it 
-
-add to destination 
-
-6 has to exit program with a message 
